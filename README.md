@@ -7,3 +7,6 @@ Start/Stop/Restart service:
 
 Login to the database:
 > psql postgres [-U <username -p <port number like 5432> -h <hostname like localhost>]
+
+## Run locally as dev
+> python simple.py
