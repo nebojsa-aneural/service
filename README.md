@@ -7,6 +7,7 @@ Start/Stop/Restart service:
 
 Login to the database:
 > psql postgres [-U <username -p <port number like 5432> -h <hostname like localhost>]
+(when developing locally, 'psql postgres' should suffice)
 
 ## Run locally as dev
 > python simple.py
@@ -23,3 +24,16 @@ HOSTNAME=localhost
 <- END OF FILE ->
 
 where all values should be set appropriately for your environment
+
+### Database setup
+
+Install PostgreSQL on your system.
+If you are on Mac or Linux use brew or apt to install it.
+Once installed, execute following commands:
+
+Create database:
+> CREATE DATABASE aneural   WITH ENCODING=‘UTF8’;
+Add role (crate user):
+> CREATE USER aneural WITH PASSWORD ‘aneural’
+Grant privileges to new user on the database:
+> GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
