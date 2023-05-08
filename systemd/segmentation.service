@@ -1,0 +1,17 @@
+[Unit]
+Description=Segmentation Service
+After=network.target
+
+[Service]
+User=aneural
+Group=aneural
+WorkingDirectory=/home/aneural/workspace/service
+Environment="PATH=/home/aneural/workspace/service/venv/bin"
+ExecStart=/home/aneural/workspace/service/bin/gunicorn service:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000
+Restart=on-failure
+RestartSec=5s
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target

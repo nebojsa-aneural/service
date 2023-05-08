@@ -1,0 +1,7 @@
+numpy
+opencv-python-headless
+psutil
+psycopg2-binary
+python-dotenv
+tensorflow
+torchmetrics
