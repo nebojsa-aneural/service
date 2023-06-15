@@ -6,3 +6,5 @@ python-dotenv
 tensorflow
 torchmetrics
 matplotlib
+asyncpg
+gunicorn
