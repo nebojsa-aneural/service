@@ -34,6 +34,6 @@ Once installed, execute following commands:
 Create database:
 > CREATE DATABASE aneural   WITH ENCODING=‘UTF8’;
 Add role (crate user):
-> CREATE USER aneural WITH PASSWORD ‘aneural’
+> CREATE USER aneural WITH PASSWORD 'aneural';
 Grant privileges to new user on the database:
 > GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
