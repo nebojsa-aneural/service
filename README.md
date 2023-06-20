@@ -16,12 +16,12 @@ Login to the database:
 Project requires ".env" file in the root in order to work.
 You can 'touch .env' or create file otherwise and have the following content inside:
 
-<- BEGINING OF FILE->
-DATABASE=aneural
-USERNAME=aneural
-PASSWORD=aneural
-HOSTNAME=localhost
-<- END OF FILE ->
+<- BEGINING OF FILE-><br/>
+DATABASE=aneural<br/>
+USERNAME=aneural<br/>
+PASSWORD=aneural<br/>
+HOSTNAME=localhost<br/>
+<- END OF FILE -><br/>
 
 where all values should be set appropriately for your environment
 
