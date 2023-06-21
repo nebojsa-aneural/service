@@ -1,3 +1,5 @@
+asyncpg
+gunicorn
 numpy
 opencv-python-headless
 psutil

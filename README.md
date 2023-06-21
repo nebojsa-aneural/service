@@ -16,12 +16,12 @@ Login to the database:
 Project requires ".env" file in the root in order to work.
 You can 'touch .env' or create file otherwise and have the following content inside:
 
-<- BEGINING OF FILE->
-DATABASE=aneural
-USERNAME=aneural
-PASSWORD=aneural
-DATABSE_HOSTNAME=localhost
-<- END OF FILE ->
+<- BEGINING OF FILE-><br/>
+DATABASE=aneural<br/>
+USERNAME=aneural<br/>
+PASSWORD=aneural<br/>
+HOSTNAME=localhost<br/>
+<- END OF FILE -><br/>
 
 where all values should be set appropriately for your environment
 
@@ -34,7 +34,7 @@ Once installed, execute following commands:
 Create database:
 > CREATE DATABASE aneural   WITH ENCODING=‘UTF8’;
 Add role (crate user):
-> CREATE USER aneural WITH PASSWORD ‘aneural’
+> CREATE USER aneural WITH PASSWORD 'aneural';
 Grant privileges to new user on the database:
 > GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
 
