@@ -20,7 +20,7 @@ You can 'touch .env' or create file otherwise and have the following content ins
 DATABASE=aneural
 USERNAME=aneural
 PASSWORD=aneural
-HOSTNAME=localhost
+DATABSE_HOSTNAME=localhost
 <- END OF FILE ->
 
 where all values should be set appropriately for your environment
@@ -37,3 +37,14 @@ Add role (crate user):
 > CREATE USER aneural WITH PASSWORD ‘aneural’
 Grant privileges to new user on the database:
 > GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
+
+### Docker
+
+Build docker from Dockerfile:
+> docker build -t aneural-segmentation-service .
+
+Start bringup process:
+> docker-compose up --build
+
+Cleanup volumes and caches:
+> docker system prune -a --volumes

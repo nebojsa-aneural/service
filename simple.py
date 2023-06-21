@@ -234,11 +234,16 @@ async def updateTask(connection, job: Job):
               job.inferenceTime, job.status, json.dumps(job.resources), job.uuid)
 
 async def connect_to_db():
+    port = 5432
     database = os.environ['DATABASE']
     username = os.environ['USERNAME']
     password = os.environ['PASSWORD']
-    hostname = os.environ['HOSTNAME']
-    return await asyncpg.connect(f"postgres://{username}:{password}@{hostname}/{database}")
+    hostname = os.environ['DATABSE_HOSTNAME']
+    connection_string = f"postgres://{username}:{password}@{hostname}:{port}/{database}"
+
+    print(f"\n\n\t\t\tPostgreSQL connection string: {connection_string}\n\n")
+
+    return await asyncpg.connect(connection_string)
 
 async def main():
     connection = await connect_to_db()
