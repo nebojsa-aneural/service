@@ -4,3 +4,5 @@ __pycache__/
 trash
 .DS_Store
 */.DS_Store
+data
+
