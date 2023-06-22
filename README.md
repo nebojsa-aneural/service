@@ -20,7 +20,10 @@ You can 'touch .env' or create file otherwise and have the following content ins
 DATABASE=aneural<br/>
 USERNAME=aneural<br/>
 PASSWORD=aneural<br/>
-HOSTNAME=localhost<br/>
+DATABSE_HOSTNAME=db<br/>
+POSTGRES_PASSWORD=aneural<br/>
+POSTGRES_USER=aneural<br/>
+DATABASE_URL=postgres://$USERNAME:$PASSWORD@$DATABSE_HOSTNAME:5432/$DATABASE<br/>
 <- END OF FILE -><br/>
 
 where all values should be set appropriately for your environment
