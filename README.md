@@ -26,10 +26,9 @@ POSTGRES_USER=aneural<br/>
 DATABASE_URL=postgres://$USERNAME:$PASSWORD@$DATABSE_HOSTNAME:5432/$DATABASE<br/>
 <- END OF FILE -><br/>
 
-where all values should be set appropriately for your environment
+where all values should be set appropriately for your environment.
 
 ### Database setup
-
 Install PostgreSQL on your system.
 If you are on Mac or Linux use brew or apt to install it.
 Once installed, execute following commands:
@@ -42,7 +41,6 @@ Grant privileges to new user on the database:
 > GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
 
 ### Docker
-
 Build docker from Dockerfile:
 > docker build -t aneural-segmentation-service .
 
