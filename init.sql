@@ -5,13 +5,23 @@
 SELECT datname FROM pg_database WHERE datname = 'aneural';
 
 -- If the database doesn't exist, create it
-SELECT pg_create_database('aneural');
+DO $$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'aneural') THEN
+        CREATE DATABASE aneural;
+    END IF;
+END $$;
 
 -- Connect to the 'aneural' database
 \c aneural;
 
--- Create user and grant privileges
-CREATE USER IF NOT EXISTS aneural WITH ENCRYPTED PASSWORD 'aneural';
+-- Create user if it doesn't exist
+DO $$ BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_user WHERE usename = 'aneural') THEN
+        CREATE USER aneural WITH ENCRYPTED PASSWORD 'aneural';
+    END IF;
+END $$;
+
+-- Grant privileges to the user
 GRANT ALL PRIVILEGES ON DATABASE aneural TO aneural;
 
 -- Create the tasks table in the public schema if it doesn't exist

@@ -15,14 +15,10 @@ COPY requirements.txt .
 COPY .env .
 COPY simple.py .
 COPY wait-for-postgres.sh .
+COPY init.sql /docker-entrypoint-initdb.d/
 
 # Make the script executable
 RUN chmod +x wait-for-postgres.sh
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Set the command to run the application
-CMD ["./wait-for-postgres.sh", "db", "sh", "-c", "psql -h db -U postgres -c 'GRANT ALL PRIVILEGES ON SCHEMA public TO aneural;' && python simple.py"]
-
-
